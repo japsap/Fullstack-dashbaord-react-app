@@ -51,6 +51,7 @@
 }
 
 
+
 @media screen and (max-width: 580px){
     .h1-error{
        font-size: var(--h1-small);

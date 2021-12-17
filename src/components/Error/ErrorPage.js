@@ -17,7 +17,7 @@ const ErrorPage = () => {
                 <p className='p-error'>It looks like you have followed a broken link</p>
 
                 <div className='btn-error'>
-                    <Button3 title='Go back'/>
+                    <Button3 title='Gfuck it'/>
                 </div>
             </div>
         
