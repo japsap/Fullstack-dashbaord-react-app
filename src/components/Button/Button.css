@@ -1,0 +1,66 @@
+:root{
+    --dark-purp: #ce9a89;
+    --light-purp: #EAC9C1;
+    --lighter-purp:#EBD8D0;
+    --light-white: #FFFBFF;
+    --white: #FEFEFF;
+
+    --small-font-size: 16px;
+    --medium-font-size: 18px;
+    --large-font-size: 20px;
+    --larger-font-size: 25px;
+
+    --h1-small: 40px;
+    --h1-meduim: 50px;
+    --h1-large: 60px;
+    
+    --icons-small-font-size: 20px;
+    --icons-medium-font-size: 25px;
+    --icons-lagre-font-size: 30px;
+}
+
+
+.btn2-header{
+    margin-left: 20px;
+
+    font-size: var(--medium-font-size);
+    font-weight: 400;
+
+    height: 60px;
+    width: 170px;
+
+    border: 1px solid var(--dark-purp);
+    color: var(--dark-purp);
+    border-radius: 20px;
+}
+
+.btn-header{
+
+    font-size: var(--medium-font-size);
+    font-weight: 400;
+
+    height: 60px;
+    width: 170px;
+
+    border: 1px solid var(--white);
+    background-color: var(--dark-purp);
+    color: var(--white);
+    border-radius: 20px;
+}
+
+.pos-icon-btn{
+    margin-right: 10px;
+}
+
+
+
+/* responsive */
+@media screen and (max-width: 900px){
+    .btn2-header{
+      margin-left: 0px;
+      
+    }
+    .btn-header{
+        margin-bottom: 10px;
+    }
+  }

@@ -1,0 +1,112 @@
+:root{
+    --dark-purp: #D3AB9E;
+    --light-purp: #EAC9C1;
+    --lighter-purp:#EBD8D0;
+    --light-white: #FFFBFF;
+    --white: #FEFEFF;
+
+    --small-font-size: 16px;
+    --medium-font-size: 18px;
+    --large-font-size: 20px;
+    --larger-font-size: 25px;
+
+    --h1-small: 40px;
+    --h1-meduim: 50px;
+    --h1-large: 60px;
+    
+    --icons-small-font-size: 20px;
+    --icons-medium-font-size: 25px;
+    --icons-lagre-font-size: 30px;
+}
+
+
+
+
+/* 
+    PX – a single pixel
+    EM – relative unit based on the font-size of the element.
+    REM – relative unit based on the font-size of the element.
+    VH, VW – % of the viewport’s height or width.
+    % – the percentage of the parent element.
+*/
+
+/* flexbox */
+.flex-container{
+  margin-top: 200px;
+  z-index: 1;
+}
+.texts-flex{
+  padding: 20px;
+  flex: 1.2;
+}
+.imgs-flex{
+  padding: 20px;
+  flex: 1;
+  z-index: -1;
+}
+
+
+.img-sun{
+  height: auto;
+  width: 700px;
+  z-index: -1;
+}
+
+.text-pos{
+  margin-top: 100px;
+  margin-left: 150px;
+  z-index: -1;
+}
+.text-pos h1{
+  font-size: var(--h1-meduim);
+}
+
+.btn-flexbox{
+  margin-top: 50px;
+}
+/* flexbox */
+
+
+
+
+
+@media screen and (min-width: 900px){
+  .flex-container{
+    display: flex;
+  }
+  .btn-flexbox{
+    display: flex;
+  }
+}
+/* responsive shit */
+@media screen and (max-width: 480px){
+
+}
+@media screen and (min-width: 481px) and (max-width: 768px){
+
+}
+
+/* useless */
+@media screen and (max-width: 900px){
+  .text-pos{
+    margin-top: 0px;
+    margin-left: 0px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 978px){
+  .red{
+    display: none;
+  }
+}
+/* useless */
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px){
+    
+}
+@media screen and (min-width: 1201px) and (max-width: 50000px){
+    
+}

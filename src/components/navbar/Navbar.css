@@ -1,0 +1,189 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+
+:root{
+    --dark-purp: #D3AB9E;
+    --light-purp: #EAC9C1;
+    --lighter-purp:#EBD8D0;
+    --light-white: #FFFBFF;
+    --white: #FEFEFF;
+
+    --small-font-size: 16px;
+    --medium-font-size: 18px;
+    --large-font-size: 20px;
+    --larger-font-size: 25px;
+    
+    --icons-small-font-size:20px;
+    --icons-medium-font-size:25px;
+    --icons-lagre-font-size:30px;
+}
+.navbar-1{
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    margin-top: -200px;
+    background-color: #FEFEFF;
+    box-shadow: 0 2px 2px 1px rgba(0,0,0,.2);
+    transition: all 0.25s linear;
+}
+.navbar-2{
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    margin-top: -200px;
+    background-color: #363537;
+    transition: all 0.25s linear;
+    box-shadow: 0 2px 2px 1px rgba(0,0,0,.2);
+}
+.logo{
+    height: auto;
+    width: 200px;
+    position: fixed;
+}
+
+
+/* pc navbar */
+.link-pos{
+    position: fixed;
+    left: 50%;
+    top: 4%;
+    transform: translate(-50%,0);
+}
+.link-pos .link-pc{
+    font-size: var(--small-font-size);
+    margin-left: 20px;
+    display: inline-block;
+}
+.link-pos .link-pc::after{
+    content: '';
+    background:var(--dark-purp);
+    height: 2px;
+    width: 0%;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.link-pos .link-pc:hover::after{
+    width: 100%;
+}
+/* pc navbar */
+
+/* mobile navbar */
+#slidebar{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background-color: #D3AB9E;
+    transition: 0.9s;
+}
+#slidebar.active{
+    height: 100%;
+}
+.toggle-btn{
+    z-index: 1;
+    opacity: 1;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    padding: 45px;
+    font-size: var(--icons-medium-font-size);
+}
+.toggle-close{
+    position: absolute;
+    padding: 45px;
+    font-size:var(--icons-medium-font-size);
+    top: 0%;
+    right: 0%;
+    color:var(--light-white);
+}
+.mobile-links{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.9s;
+}
+.link-phone{
+    display: block;
+    color: var(--light-white);
+    font-size: var(--larger-font-size);
+    margin-bottom: 5px;
+    transition: 0.8s;
+}
+.link-phone:hover{
+    letter-spacing: 2px;
+}
+.link-phone::after{
+    content: '';
+    background:var(--lighter-purp);
+    height: 1.5px;
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+/* mobile navbar */
+
+/* 
+    PX – a single pixel
+    EM – relative unit based on the font-size of the element.
+    REM – relative unit based on the font-size of the element.
+    VH, VW – % of the viewport’s height or width.
+    % – the percentage of the parent element.
+*/
+
+
+/* responsive shit */
+@media screen and (max-width: 480px){
+
+}
+@media screen and (min-width: 481px) and (max-width: 768px){
+    
+}
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    
+}
+@media screen and (min-width: 1025px) and (max-width: 1200px){
+    
+}
+@media screen and (min-width: 1201px) and (max-width: 50000px){
+    
+}
+
+
+/* from 0 to 1000 */
+@media screen and (max-width: 769px){
+    .link-pos{
+        display: none;
+    }
+    .logo{
+        position: absolute;
+        margin-top: 10px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .btn-1{
+        position: absolute;
+        left: 0%;
+    }
+    .btn-2{
+        position: absolute;
+        left: 0%;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 50000px){
+    .toggle-btn{
+        display: none;
+    }
+    #slidebar{
+        display: none;
+    }
+}
