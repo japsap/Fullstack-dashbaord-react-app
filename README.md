@@ -9,3 +9,11 @@ One of my first multitasking web-react-applications :)
 ✔️ todolist adder
 ✔️ responsiveness 
 ✔️ cool design :D
+
+
+Library ive used:
+✔️ Swiper.js 
+✔️ Email.js
+
+ALL THE DEISGN FUNCTIONALITY AND RESPONSIVENESS OF THE SITE WAS MADE BY ME!!
+
