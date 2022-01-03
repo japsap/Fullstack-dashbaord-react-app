@@ -1,0 +1,119 @@
+:root{
+    --dark-purp: #D3AB9E;
+    --light-purp: #EAC9C1;
+    --lighter-purp:#EBD8D0;
+    --light-white: #FFFBFF;
+    --white: #FEFEFF;
+
+    --small-font-size: 16px;
+    --medium-font-size: 18px;
+    --large-font-size: 20px;
+    --larger-font-size: 25px;
+
+    --h1-small: 40px;
+    --h1-meduim: 50px;
+    --h1-large: 60px;
+    
+    --icons-small-font-size: 20px;
+    --icons-medium-font-size: 25px;
+    --icons-lagre-font-size: 30px;
+
+    --size:300px;
+}
+
+
+.footer__flexbox{
+    margin-top: 200px;
+    justify-content: center;
+    border-top-left-radius:20px ;
+    border-top-right-radius:20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    padding: 30px;
+}
+.footer__flexbox > * {
+    padding: 20px;
+    margin: 20px;
+}
+
+.footer__logo{
+    height: auto;
+    width: 220px;
+    padding: -20px;
+    margin-left: -25px;
+    margin-bottom: 10px;
+}
+.logo__box{
+    margin-top: -10px;
+}
+
+.logo__box .p__1{
+    color: rgb(58, 58, 58);
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.logo__box .p__2{
+    color: #666;
+    font-weight: 400;
+}
+
+
+.information__box{
+    margin-bottom: 20px;
+}
+.information__box .p__3{
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.dashboard__box{
+    margin-bottom: 20px;
+    
+}
+.dashboard__box .p__3{
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+
+.footer__icons{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    margin-left: -20px;
+}
+.footer__icons > *{
+    margin-left: 10px;
+}
+.contacts__box{
+    margin-bottom: 20px;
+}
+.contacts__box .p__3{
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+.main__p{
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.main__p::after{
+    content: '';
+    background-color: var(--dark-purp);
+    width: 5%;
+    height: 2px;
+    display: block;
+    margin: auto;
+    position: absolute;
+}
+@media screen and (min-width:1200px){
+    .footer__flexbox{
+        display: flex;
+    }
+}

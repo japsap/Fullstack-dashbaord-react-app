@@ -13,6 +13,25 @@ const AllInOne = () => {
   const [passwordError, setPassswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(false);
 
+
+  const [ name, setName] = useState('');
+  const [tasks, setTasks] = useState('');
+
+  const addUsername = (task) => {
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
+  }
+
+  
+  const onSubmit = (e) => {
+    e.preventDefault();
+    addUsername({ name })
+
+    setName(name)
+  }
+
+
   const clearInputs = () => {
       setEmail('');
       setPassword('');
@@ -27,7 +46,7 @@ const AllInOne = () => {
       clearErrors();
     fire
       .auth()
-      .createUserWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(email, password)
       .catch((err) => {
         switch (err.code) {
           case "auth/invalid-email":
@@ -36,7 +55,7 @@ const AllInOne = () => {
             setEmailError(err.message);
             break;
           case "auth/wrong-password":
-            setPassword(err.message);
+            setPassswordError(err.message);
             break;
         }
       });
@@ -46,15 +65,15 @@ const AllInOne = () => {
       clearErrors()
       fire
       .auth()
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
         switch (err.code) {
+          case "auth/email-already-in-use":
           case "auth/invalid-email":
-          case "auth/user-already-in-use":
             setEmailError(err.message);
             break;
           case "auth/weak-password":
-            setPassword(err.message);
+            setPassswordError(err.message);
             break;
         }
       });
@@ -80,7 +99,12 @@ const AllInOne = () => {
     }, [])
 
   return (
-    <div>{user ? <Dashboard handleLogout={handleLogout}/> :  <LogForm
+    <div>{user ? 
+        <Dashboard 
+           handleLogout={handleLogout}
+           ime={name}
+        /> :  
+      <LogForm
       email={email}
       setEmail={setEmail}
       password={password}
@@ -92,6 +116,9 @@ const AllInOne = () => {
       emailError={emailError}
       passwordError={passwordError}
       handleLogout={handleLogout}
+      onSubmit={onSubmit}
+      setName={setName}
+      name={name}
     /> }
      
     </div>

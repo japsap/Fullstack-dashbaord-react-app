@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useffect, useState } from "react";
 
 import './Log.css'
 
+
+import { Link } from 'react-router-dom'
+import { FiArrowLeft } from 'react-icons/fi';
+
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
+
 const Container = (props) => {
+ 
   const {
     email,
     setEmail,
@@ -14,99 +23,118 @@ const Container = (props) => {
     setHasAccount,
     emailError,
     passwordError,
-    
+    setName,
+    name,
+    onSubmit
   } = props;
+
+  
 
   return (
     <div>
-      <div className="background-square">
-
-      </div>
-      <div className="login">
-        <div className="loginContainer">
-          <div className="btnContainer">
-            {hasAccount ? (
-              <>
-                {/* email label */}
-                <div>
-                  <h2 className="log">Log in</h2>
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    autoFocus
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <p className="errorMsg">{emailError}</p>
-                </div>
-                {/* email label */}
-
-                {/* password label */}
-                <div>
-                  <label>Password</label>
-                  <input
-                    required
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <p className="errorMsg">{passwordError}</p>
-                </div>
-                {/* password label */}
-                <button className="butt" onClick={handleLogin}>
-                  Sign in
-                </button>
-                <p>
-                  Dont have an account?
-                  <span onClick={() => setHasAccount(!hasAccount)}>
-                    Sign up
-                  </span>
-                </p>
-              </>
-            ) : (
-              <>
-                {/* Username label */}
-                <div>
-                  <h2 className="sign">Sign in</h2>
-                  <label>Email</label>
-                  <input
-                    type="text"
-                    autoFocus
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <p className="errorMsg">{emailError}</p>
-                </div>
-                {/* Username label */}
-
-                {/* passwordLabel */}
-                <div>
-                  <label>Password</label>
-                  <input
-                    type="password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <p className="errorMsg">{passwordError}</p>
-                </div>
-                {/* end of the labels */}
-                <button className="butt" onClick={handleSignUp}>
-                  Sign up
-                </button>
-                <p>
-                  Have an account?
-                  <span onClick={() => setHasAccount(!hasAccount)}>
-                    Sign in
-                  </span>
-                </p>
-              </>
-            )}
-          </div>
+        <div className="background-square" >
         </div>
-      </div>
+
+        {/* login form */}
+        <form onSubmit={onSubmit}>
+        <div className="login" >
+        <Link to='/'><FiArrowLeft className="back__icon"/></Link>
+            <div className="loginContainer">
+                <div className="btnContainer">
+                    {hasAccount ? (
+                      <>
+
+                      {/* Login container */}
+
+                        <h1 className="log">Login</h1>
+
+                        {/* email */}
+                        <label>Email</label>
+                        <input
+                          type="text"
+                          required
+                          autoFocus
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <p className="errorMsg">{emailError}</p>
+                        {/* email */}
+
+                        {/* password */}
+                          <label>Password</label>
+                          <input
+                            type="password"
+                            required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
+                          <p className="errorMsg">{passwordError}</p>
+                        {/* password */}
+
+
+                        <button className="butt" onClick={handleLogin}>Log in</button>
+                        <p>Dont have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></p>
+                    
+
+                      {/* Login container */}
+
+                      </>
+                    ):(
+                      <>
+
+                        {/* Sign in container */}
+                        <h1 className="sign">Sign up</h1>
+
+                          {/* user */}
+                            <label>Username</label>
+                            <input
+                              type="text"
+                              required
+                              autoFocus
+                              value={name}
+                              onChange={(e) => setName(e.target.value)}
+                            />
+                          {/* user */}
+
+
+                          {/* email */}
+                          <label>Email</label>
+                          <input
+                            type="text"
+                            required
+                            autoFocus
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
+                        <p className="errorMsg">{emailError}</p>
+                        {/* email */}
+
+                        {/* password */}
+                          <label>Password</label>
+                          <input
+                            type="password"
+                            required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
+                          <p className="errorMsg">{passwordError}</p>
+                            {/* password */}
+
+
+                          <button className="butt" onClick={handleSignUp}>Sign up</button>
+                          <p>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Log in</span></p>
+                          {/* <label>Sign up</label> */}
+
+                         {/* Sign in container */}
+
+                      </>
+                    )
+                  }
+                </div>
+                {/* password */}
+            </div>
+        </div>
+        </form>
     </div>
   );
 };

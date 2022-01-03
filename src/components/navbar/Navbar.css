@@ -1,12 +1,12 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
 :root{
-    --dark-purp: #D3AB9E;
+    --dark-purp: 1414F0;
     --light-purp: #EAC9C1;
     --lighter-purp:#EBD8D0;
     --light-white: #FFFBFF;

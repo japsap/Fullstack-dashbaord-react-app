@@ -9,7 +9,12 @@ import { BsMoon , BsSun } from 'react-icons/bs';
 
 import Navbar from './navbar/Navbar';
 import Header from "./header/Header";
-
+import Section1 from "./section-1/Section1";
+import Section2 from "./section-2/Section2";
+import Section3 from "./swiper/Section3";
+import Section4 from "./section-4/Section4";
+import Contact from "./contactMe/Contact";
+import Footer from "./Footer/Footer";
 
 
 const Home = () => {
@@ -44,6 +49,12 @@ const Home = () => {
           <button className="btn-2" id="btn-to-light" onClick={toggleThemeOtherTheme}> <BsSun/> </button>
           <Navbar theme={theme}/>
           <Header theme={theme}/>
+          <Section1 theme={theme}/>
+          <Section2 theme={theme}/>
+          <Section3 theme={theme}/>
+          <Section4 theme={theme}/>
+          <Contact theme={theme}/>
+          <Footer theme={theme}/>
       </ThemeProvider>
     </div>
   );
